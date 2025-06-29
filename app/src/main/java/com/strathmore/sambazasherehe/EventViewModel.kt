@@ -35,4 +35,18 @@ class EventViewModel(private val dao: EventDao) : ViewModel() {
             }
         }
     }
+
+    init {
+    viewModelScope.launch(Dispatchers.IO) {
+        try {
+            val eventsFromDb = dao.getAll()
+            withContext(Dispatchers.Main) {
+                events.addAll(eventsFromDb)
+            }
+        } catch (e: Exception) {
+            println("DB Error: ${e.message}")
+        }
+    }
 }
+}
+
