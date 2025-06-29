@@ -13,10 +13,17 @@ import androidx.compose.foundation.layout.*
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
-fun EventListScreen(
-    onAddEventClick: () -> Unit,
-    viewModel: EventViewModel
-) {
+fun EventListScreen(navController: NavController) {
+    val context = LocalContext.current
+    val viewModel: EventViewModel = viewModel(
+        factory = EventViewModelFactory(
+            AppDatabase.getDatabase(context).eventDao()
+        )
+    )
+//fun EventListScreen(
+   // onAddEventClick: () -> Unit,
+   // viewModel: EventViewModel
+//) 
    /* val viewModel: EventViewModel = viewModel(
         factory = viewModelFactory {
             initializer {
