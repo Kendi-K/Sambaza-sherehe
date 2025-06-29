@@ -63,3 +63,18 @@ fun AppNavigation(viewModel: EventViewModel) {
         }
     }
 }
+setContent {
+    EventAppTheme {
+        val navController = rememberNavController()
+        NavHost(navController, startDestination = "events") {
+            composable("events") {
+                EventListScreen(navController)
+            }
+            composable("addEvent") {
+                AddEventScreen {
+                    navController.popBackStack()
+                }
+            }
+        }
+    }
+}
