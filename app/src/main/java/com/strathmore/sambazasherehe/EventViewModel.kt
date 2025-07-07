@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.withContext
 
 class EventViewModel(private val dao: EventDao) : ViewModel() {
     val events = mutableStateListOf<Event>()

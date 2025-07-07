@@ -48,11 +48,14 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AppNavigation(viewModel: EventViewModel) {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "event_list") {
+    NavHost(navController = navController , startDestination = "event_list") {
         composable("event_list") {
+            val onAddEventClick = {
+                navController.navigate("add_event")
+            }
             EventListScreen(
-                onAddEventClick = { navController.navigate("add_event") },
-                viewModel = viewModel
+                navController = navController,
+                onAddEventClick = onAddEventClick
             )
         }
         composable("add_event") {
@@ -63,18 +66,17 @@ fun AppNavigation(viewModel: EventViewModel) {
         }
     }
 }
-setContent {
-    EventAppTheme {
-        val navController = rememberNavController()
-        NavHost(navController, startDestination = "events") {
-            composable("events") {
-                EventListScreen(navController)
-            }
-            composable("addEvent") {
-                AddEventScreen {
-                    navController.popBackStack()
-                }
+
+/*setContent {
+    val navController = rememberNavController()
+    NavHost(navController, startDestination = "events") {
+        composable("events") {
+            EventListScreen(navController)
+        }
+        composable("addEvent") {
+            AddEventScreen {
+                navController.popBackStack()
             }
         }
     }
-}
+}*/

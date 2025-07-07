@@ -11,9 +11,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.*
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+import androidx.compose.ui.platform.LocalContext
 
 @Composable
-fun EventListScreen(navController: NavController) {
+fun EventListScreen(
+    navController: NavController,
+        onAddEventClick: () -> Unit
+) {
     val context = LocalContext.current
     val viewModel: EventViewModel = viewModel(
         factory = EventViewModelFactory(
