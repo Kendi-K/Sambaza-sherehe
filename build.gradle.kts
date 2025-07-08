@@ -13,5 +13,12 @@ plugins {
     /*id("com.android.application")
     id("org.jetbrains.kotlin.android")*/
     alias(libs.plugins.kotlin.kapt) apply false
+    id("com.google.gms.google-services") version "4.4.2" apply false
 
+}
+buildscript {
+    dependencies {
+        // Add this line
+        classpath("com.google.gms:google-services:4.3.10")
+    }
 }

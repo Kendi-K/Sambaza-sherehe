@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("org.jetbrains.kotlin.kapt") // Keep this for Room
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -76,6 +77,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation ("com.google.firebase:firebase-database-ktx:20.0.3")
+    implementation ("com.google.firebase:firebase-auth-ktx:21.0.1")
     // REMOVE these as they are likely duplicates or superseded by the above:
     // implementation(libs.androidx.lifecycle.runtime.ktx) // You have v286 or the other alias
     // implementation(libs.androidx.room.common.jvm) // room-runtime includes common
