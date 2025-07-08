@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "141730023525",
+    "project_id": "sambaza-sherehe",
+    "storage_bucket": "sambaza-sherehe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141730023525:android:3da85f35d04aa161239e8c",
+        "android_client_info": {
+          "package_name": "com.strathmore.sambazasherehe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCUJ0T3ygu1WTZTmi_rt6cH68pEvLJ-Ww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
