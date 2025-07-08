@@ -11,5 +11,6 @@ interface EventDao {
     suspend fun getAll(): List<Event>
 
     @Insert
-    suspend fun insert(event: Event)
+    suspend fun insert(event: Event): Long
+
 }

@@ -60,7 +60,8 @@ fun AddEventScreen(
         Button(
             onClick = {
                 if (name.isNotBlank() && location.isNotBlank() && discount.toIntOrNull() != null) {
-                    viewModel.addEvent(Event(name = name, location = location, discount = discount.toInt()))
+                    val newEvent = Event(name = name, location = location, discount = discount.toInt())
+                    viewModel.addEvent(newEvent)
                     onAddEvent()
                 }
             },

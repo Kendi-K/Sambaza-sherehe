@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class Event(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val firebaseId: String? = null, //Firebase Key
     val name: String,
     val location: String,
     val discount: Int
