@@ -11,11 +11,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.strathmore.sambazasherehe.ui.theme.*
-
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Initialize Firebase
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true)
         setContent {
             EventAppTheme {
                 val viewModel: EventViewModel = viewModel(
