@@ -1,5 +1,5 @@
 // EventDao.kt (Interface)
-package com.strathmore.sambaza_sherehe
+package com.strathmore.sambazasherehe
 
 //import android.media.metrics.Event
 import androidx.room.Dao
@@ -8,7 +8,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
-import com.strathmore.sambaza_sherehe.Event
+import com.strathmore.sambazasherehe.Event
 
 
 @Dao
