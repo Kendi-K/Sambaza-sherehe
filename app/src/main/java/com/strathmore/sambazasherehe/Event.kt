@@ -1,5 +1,5 @@
 // Event.kt
-package com.strathmore.sambaza_sherehe
+package com.strathmore.sambazasherehe
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
