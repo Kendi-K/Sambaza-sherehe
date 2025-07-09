@@ -1,4 +1,4 @@
-package com.strathmore.sambaza_sherehe.ui.theme // Adjust package name as needed
+package com.strathmore.sambazasherehe.ui.theme 
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
@@ -11,14 +11,14 @@ private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
     tertiary = Pink80
-    // Define other colors as needed
+    
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
     tertiary = Pink40
-    // Define other colors as needed
+    
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -32,7 +32,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun EventAppTheme( // This is the function you're calling
+fun EventAppTheme( 
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
@@ -43,7 +43,7 @@ fun EventAppTheme( // This is the function you're calling
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography, // Make sure Typography is defined
+        typography = Typography, 
         content = content
     )
 }
