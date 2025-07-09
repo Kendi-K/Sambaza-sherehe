@@ -1,5 +1,5 @@
 // EventViewModel.kt
-package com.strathmore.sambaza_sherehe
+package com.strathmore.sambazasherehe
 
 
 import androidx.lifecycle.ViewModel
@@ -21,12 +21,12 @@ class EventViewModel(private val dao: EventDao) : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 dao.getAllEventsFlow()
-                    .collect { eventList -> // Assuming getAllEventsFlow returns Flow<List<Event>>
+                    .collect { eventList -> 
                         _events.value = eventList
                     }
             } catch (e: Exception) {
                 println("Failed to load events: ${e.message}")
-                // Optionally emit an error state
+                
             }
         }
     }
@@ -35,7 +35,7 @@ class EventViewModel(private val dao: EventDao) : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 dao.insert(event)
-                // The flow from getAllEventsFlow should automatically update the list.
+                
             } catch (e: Exception) {
                 println("Failed to add event: ${e.message}")
             }
@@ -44,7 +44,7 @@ class EventViewModel(private val dao: EventDao) : ViewModel() {
 
     // Function to get a single event by ID
     fun getEventById(eventId: Int): Flow<Event?> {
-        return dao.getEventByIdFlow(eventId) // Create this function in your DAO
+        return dao.getEventByIdFlow(eventId) 
             .flowOn(Dispatchers.IO)
     }
 
