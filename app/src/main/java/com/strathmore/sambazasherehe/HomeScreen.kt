@@ -1,5 +1,5 @@
 // HomeScreen.kt
-package com.strathmore.sambaza_sherehe
+package com.strathmore.sambazasherehe
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -21,7 +21,7 @@ import androidx.navigation.NavController
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items 
 
-import com.strathmore.sambaza_sherehe.Event
+import com.strathmore.sambazasherehe.Event
 
 @OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
