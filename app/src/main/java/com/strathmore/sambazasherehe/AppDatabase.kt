@@ -1,9 +1,11 @@
-package com.strathmore.sambazasherehe
+package com.strathmore.sambaza_sherehe
 
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import android.content.Context
+import com.strathmore.sambaza_sherehe.Event
+import com.strathmore.sambaza_sherehe.EventDao
 
 @Database(entities = [Event::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
