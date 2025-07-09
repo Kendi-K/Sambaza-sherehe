@@ -1,4 +1,4 @@
-package com.strathmore.sambaza_sherehe
+package com.strathmore.sambazasherehe
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,14 +12,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.strathmore.sambaza_sherehe.ui.theme.EventAppTheme // <--- ADD THIS IMPORT
+import com.strathmore.sambazasherehe.ui.theme.EventAppTheme 
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            EventAppTheme { // Ensure EventAppTheme is defined
+            EventAppTheme { 
                 val viewModel: EventViewModel = viewModel(
                     factory = object : ViewModelProvider.Factory {
                         override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -40,19 +40,19 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AppNavigation(viewModel: EventViewModel) {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "home_screen") { // Start at home
+    NavHost(navController = navController, startDestination = "home_screen") { 
         composable("home_screen") {
             HomeScreen(navController = navController, viewModel = viewModel)
         }
         composable("add_event") {
             AddEventScreen(
                 onAddEvent = {
-                    // Handle the event addition logic here
+                    
                 },
                 viewModel = viewModel,
                 onEventAdded = {
-                    navController.popBackStack() // Go back after adding
-                    true // Return true to indicate success
+                    navController.popBackStack() 
+                    true 
                 },
             )
         }
@@ -72,16 +72,15 @@ fun AppNavigation(viewModel: EventViewModel) {
                 navController.popBackStack()
             }
         }
-        // You might still want EventListScreen for a different purpose,
-        // or you can remove it if HomeScreen replaces its functionality.
-        composable("event_list_debug") { // Example if you keep EventListScreen
+        
+        composable("event_list_debug") { 
             val onAddEventClick = {
                 navController.navigate("add_event")
             }
             EventListScreen(
                 navController = navController,
                 onAddEventClick = onAddEventClick,
-                viewModel = viewModel // Pass viewModel
+                viewModel = viewModel 
             )
         }
     }
