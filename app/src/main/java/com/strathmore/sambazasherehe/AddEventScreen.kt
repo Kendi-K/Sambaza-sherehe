@@ -1,4 +1,4 @@
-package com.strathmore.sambaza_sherehe
+package com.strathmore.sambazasherehe
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
@@ -11,7 +11,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 //import android.media.metrics.Event
-import com.strathmore.sambaza_sherehe.Event
+import com.strathmore.sambazasherehe.Event
 
 @Composable
 fun AddEventScreen(
